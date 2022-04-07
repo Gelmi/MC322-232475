@@ -5,7 +5,7 @@ public class Animacao {
 	int posicaoInicial;
 	String comandos;
 	int numeroComandos, comandoAtual;
-	Lombriga lombriga;
+	AquarioLombriga lombriga;
 	
 	Animacao (String comandosAnimacao){
 		tamanhoAquario = Integer.parseInt(comandosAnimacao.substring(0,2));
@@ -14,7 +14,7 @@ public class Animacao {
 		comandos = comandosAnimacao.substring(6);
 		numeroComandos = comandos.length();
 		comandoAtual = 0;
-		lombriga = new Lombriga(tamanhoAquario, tamanhoLombriga, posicaoInicial);
+		lombriga = new AquarioLombriga(tamanhoAquario, tamanhoLombriga, posicaoInicial);
 	}
 	
 	public void passo() {
