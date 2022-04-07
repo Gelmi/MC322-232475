@@ -6,7 +6,7 @@ public class Lombriga {
     char[] representacao;
     boolean esquerda;
 
-    Lombriga ( int tamanhoAquario, int tamanhoLombriga, int posicaoInicial){
+    AquarioLombriga ( int tamanhoAquario, int tamanhoLombriga, int posicaoInicial){
         this.tamanhoLombriga = tamanhoLombriga;
         this.tamanhoAquario = tamanhoAquario;
         this.posicaoInicial = posicaoInicial;
