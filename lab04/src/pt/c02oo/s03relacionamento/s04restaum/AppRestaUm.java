@@ -10,24 +10,15 @@ public class AppRestaUm {
       Toolkit tk = Toolkit.start(arquivoEntrada, arquivoSaida);
       
       String commands[] = tk.retrieveCommands();
+     
+      Tabuleiro tabuleiro = new Tabuleiro();
       
-      System.out.println("=== Entrada");
-      for (int l = 0; l < commands.length; l++)
-         System.out.println(commands[l]);
-      
-      System.out.println("=== Primeira Saída");
-      char board[][] = {
-         {' ', ' ', 'P', 'P', 'P', ' ', ' '},
-         {' ', ' ', 'P', 'P', 'P', ' ', ' '},
-         {'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-         {'P', 'P', 'P', '-', 'P', 'P', 'P'},
-         {'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-         {' ', ' ', 'P', 'P', 'P', ' ', ' '},
-         {' ', ' ', 'P', 'P', 'P', ' ', ' '}
-      };
-            
-      tk.writeBoard("Tabuleiro inicial", board);
-      
+      tk.writeBoard("Tabuleiro inicial", tabuleiro.getTabuleiro());
+      for (int l = 0; l < commands.length; l++) {
+          tabuleiro.mover(commands[l]);   
+          tk.writeBoard("source: "+commands[l].split(":")[0]+"; target: "+commands[l].split(":")[1], tabuleiro.getTabuleiro());
+      }
+
       tk.stop();
    }
 
